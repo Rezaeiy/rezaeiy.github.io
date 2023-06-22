@@ -1,0 +1,229 @@
+@font-face {
+  font-family: Cairob;
+  src: url("Cairo-Bold.ttf");
+  font-weight: 700, 400;
+}
+
+@font-face {
+  font-family: Cairo;
+  src: url("Cairo-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Cairo;
+  color: #e7e5e4;
+}
+
+body {
+  background-color: #0c0a09;
+}
+
+header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  width: 90vmin;
+  height: 90vmin;
+  top: 0;
+  left: 0;
+  background-color: #1c1917;
+  border-bottom-right-radius: 100%;
+  z-index: -1;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  text-align: center;
+}
+
+.intro {
+  font-family: Cairob;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+.description {
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation-name: arrow;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+/*  main  */
+
+main {
+  height: 1000px;
+}
+
+.salt {
+  background: linear-gradient(to left, transparent, #1c1917);
+  margin: 8rem auto;
+  padding: 2rem 4rem;
+  width: 40rem;
+  border-left: 0.25rem solid #e7e5e4;
+  border-radius: 1rem;
+}
+
+.salt h2 {
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  line-height: 4rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.salt h3 {
+  font-size: 3rem;
+  color: #ec4899;
+  letter-spacing: 0.5rem;
+  font-style: italic;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.cool {
+  position: relative;
+  color: #38bdf8;
+  font-size: 4rem;
+  font-style: normal;
+}
+
+.cool::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5rem;
+  left: 0;
+  top: 50%;
+  background: linear-gradient(transparent, transparent, #38bdf8);
+  border-radius: 50%;
+}
+
+.salt:hover h3 {
+  opacity: 1;
+}
+
+.html, .css, .js {
+  font-size: 4rem;
+  font-weight: 700;
+  width: 20rem;
+  margin: 5rem;
+}
+
+.html {
+  border-right: 1px solid orangered;
+}
+
+.css {
+  border-right: 1px solid dodgerblue;
+}
+
+.js {
+  border-right: 1px solid gold;
+}
+
+/*  footer  */
+
+footer {
+  display: flex;
+  background-color: #1c1917;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  margin-top: 10rem;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0c0a09;
+  padding: 1rem 2rem;
+  transform: skew(5deg, 3deg);
+  box-shadow: -20px 20px 0 -5px #e7e5e4;
+  transition: box-shadow 0.3s ease;
+}
+
+.social:hover {
+  box-shadow: -5px 5px 0 -5px #e7e5e4;
+}
+
+footer p {
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  font-family: Cairob;
+  transform: rotate(-10deg) translateY(-20px);
+}
+
+ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+a {
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+#git:hover {
+  background-color: blueviolet;
+}
+
+#tel:hover {
+  background-color: deepskyblue;
+}
+
+#lin:hover {
+  background-color: royalblue;
+}
+
+
+@media screen and (max-width: 500) {
+  html {
+    font-size: 8px;
+  }
+}
